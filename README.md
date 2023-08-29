@@ -9,3 +9,12 @@ python3 main.py
 
 # ver librerias pip3 freeze
 # version pip3 -V
+
+
+***Follow*** sh
+git clone
+cd app
+source env/bin/activate
+pip3 install -r requirements
+python3 main.py
+***Follow*** 
