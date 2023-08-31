@@ -36,7 +36,9 @@ if __name__ == "__main__":
 import utils_other
 import charts
 import read_csv
+import pandas as pd
 
+'''
 def run():
   data = read_csv.read_csv('./app/data.csv')
   country = input('Type Country => ')
@@ -46,6 +48,8 @@ def run():
     country = result[0]
     labels, values = utils_other.get_population(country)
     charts.generate_bar_chart(labels, values)
+
+    
 
 def run2():
   data = read_csv.read_csv('./app/data.csv')
@@ -59,9 +63,10 @@ def run3():
   countries = list(map(lambda x: x['Country/Territory'], data))
   percentages = list(map(lambda x: x['World Population Percentage'], data))
   charts.generate_pie_chart(countries, percentages)
-
+'''
 
 def run4():
+  '''
   data = read_csv.read_csv('data.csv')
   data = list(filter(lambda item: item['Continent'] == 'South America', data))
   
@@ -69,6 +74,16 @@ def run4():
   percentages = list(map(lambda x: x['World Population Percentage'], data))
   charts.generate_pie_chart(countries, percentages)
 
+  '''
+  df = pd.read_csv('data.csv') #dataframe
+  df = df[df['Continent'] == 'Africa']#Solo quiero seleccionar los datos en donde la columna sea Sout, esto filtra
+
+  countries = df['Country/Territory'].values
+  percentages = df['World Population Percentage'].values
+#----------------------------------------------- Pandas above
+  charts.generate_pie_chart(countries, percentages)
+
+  data = read_csv.read_csv('data.csv')
   country = input('Type Country => ')
 
   result = utils_other.population_by_country(data, country)
@@ -76,7 +91,8 @@ def run4():
     country = result[0]
     labels, values = utils_other.get_population(country)
     charts.generate_bar_chart(country['Country/Territory'], labels, values)
-    
+
+     
 #Si es ejecutado desde la terminal ejecute run
 #Si es ejecutado desde otro archivo no se ejecutara
 if __name__ == "__main__":

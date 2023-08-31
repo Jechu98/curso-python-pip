@@ -11,10 +11,10 @@ python3 main.py
 # version pip3 -V
 
 
-***Follow*** sh
+.... sh
 git clone
 cd app
 source env/bin/activate
 pip3 install -r requirements
 python3 main.py
-***Follow*** 
+.....
