@@ -85,14 +85,16 @@ def run4():
 
   data = read_csv.read_csv('data.csv')
   country = input('Type Country => ')
-
+  print(country)
+     
   result = utils_other.population_by_country(data, country)
+  print(result)
   if len(result) > 0:
     country = result[0]
+    print(country)
     labels, values = utils_other.get_population(country)
     charts.generate_bar_chart(country['Country/Territory'], labels, values)
 
-     
 #Si es ejecutado desde la terminal ejecute run
 #Si es ejecutado desde otro archivo no se ejecutara
 if __name__ == "__main__":

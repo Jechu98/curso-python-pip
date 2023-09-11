@@ -9,7 +9,7 @@ def generate_bar_chart(name, labels, values):
 def generate_pie_chart(labels, values):
   fig, ax = plt.subplots()
   ax.pie(values, labels=labels)
-  plt.savefig('pie.png')
+  plt.savefig('chartpie.png')
   plt.close()
 
 
